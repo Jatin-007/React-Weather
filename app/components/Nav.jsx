@@ -5,7 +5,15 @@ var Nav = React.createClass ({
     
     onSearch: function (e){
         e.preventDefault();
-        alert('Not Yet wired Up!');
+        
+    var location= this.refs.search.value;
+    
+    var encodedLocation = encodeURIComponent(location);
+
+        if(location.length > 0) {
+            this.refs.search.value = '';
+            window.location.hash= '#/?location=' + encodedLocation;        
+        }
         
     },
     
@@ -13,25 +21,19 @@ var Nav = React.createClass ({
         return (
             <div className="top-bar">
                 <div className = "top-bar-left">
-                    <ul className = "menu">
-                        
+                    <ul className = "menu nav-styles">
                         <li className="menu-text">React Weather</li>
-                        <li>
-                            <IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Get Weather </IndexLink>
-                        </li>
-                        <li>
-                            <Link to="/about" activeClassName="active" activeStyle={{fontWeight: 'bold'}}> About</Link>
-                        </li>
-                        <li>
-                            <Link to="/examples" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Examples</Link>
-                        </li>
+                        <li><IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Get Weather </IndexLink></li>
+                        <li><Link to="/about" activeClassName="active" activeStyle={{fontWeight: 'bold'}}> About</Link></li>
+                        <li><Link to="/examples" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Examples</Link></li>
                     </ul>
                 </div>
+
                 <div className = "top-bar-right">
                     <form onSubmit={this.onSearch}>
                         <ul className= "menu">
                             <li>
-                                <input type = "text" placeholder="Search Weather by city"/>
+                                <input type = "search" ref="search" placeholder="Search Weather by city"/>
                             </li>
                             <li>
                                 <input type= "submit" className="button"/>
