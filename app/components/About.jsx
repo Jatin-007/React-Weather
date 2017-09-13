@@ -3,7 +3,9 @@ var React = require ('react');
 var About = (props) =>{
     return (
             <div>
-                <h1 className="text-center">About Component</h1>
+                <div className="header">
+                    <h1 className="text-center page-title">About Component</h1>
+                </div>
                 <p>This is a weather application on React.</p>
                 <p>Here are some of the tools i used:</p>
                 <ul>

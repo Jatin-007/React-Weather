@@ -59,7 +59,7 @@ var Weather = React.createClass ({
 // and the return function below should also match the ES6 syntax
         return (
             <div>
-            <h1 className="text-center">Get Weather</h1>
+            <h1 className="text-center page-title">Get Weather</h1>
             <WeatherForm onSearch= {this.handleSearch}/>
             {renderMessage()}
             {renderError()}
