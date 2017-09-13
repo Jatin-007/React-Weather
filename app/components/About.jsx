@@ -2,7 +2,15 @@ var React = require ('react');
 
 var About = (props) =>{
     return (
-            <h3>About Component</h3>
+            <div>
+                <h1 className="text-center">About Component</h1>
+                <p>This is a weather application on React.</p>
+                <p>Here are some of the tools i used:</p>
+                <ul>
+                    <li><a href="https://facebook.github.io/react">React</a></li>-this was the Javascript framweork used.
+                    <li><a href="http://openweathermap.org">Open Weather Map</a></li>- I used Open Weather Map to search for Weather Data by city name
+                </ul>
+            </div>
             )
 }
 
